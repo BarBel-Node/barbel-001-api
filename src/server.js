@@ -1,7 +1,14 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 
 const port = 3000
+
+app.use(cors({
+	origin: [ // daftar URL yang diperbolehkan mengakses API
+		'http://localhost:8080'
+	]
+}))
 
 // Routes and handler
 
