@@ -14,5 +14,9 @@ app.use(cors({
 
 app.get('/hello', (req, res) => res.json({msg: 'Hello World!'}))
 
+app.get('/greetings', (req, res) => {
+	res.json({msg: 'Hi ' + req.query.name + '!'})
+})
+
 // Start the server
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
